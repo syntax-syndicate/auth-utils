@@ -1,5 +1,3 @@
-import { getRandomValues } from "uncrypto";
-
 type Alphabet = "a-z" | "A-Z" | "0-9" | "-_";
 
 function expandAlphabet(alphabet: Alphabet): string {
@@ -52,7 +50,7 @@ export function createRandomStringGenerator<A extends Alphabet>(
 
 		while (result.length < length) {
 			if (bufIndex >= bufLength) {
-				getRandomValues(buf);
+				crypto.getRandomValues(buf);
 				bufIndex = 0;
 			}
 
